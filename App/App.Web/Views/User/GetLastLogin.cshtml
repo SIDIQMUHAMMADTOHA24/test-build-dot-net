@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "User";
+    ViewBag.CTitle = "Last Login";
+}
+
+<div class="card card-custom gutter-b">
+    <div class="card-header">
+        <div class="card-title">
+            <span class="card-icon">
+                <i class="flaticon2-layers text-primary"></i>
+            </span>
+            <h3 class="card-label">
+                List User Last Login
+            </h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered" id="get_table">
+            <thead>
+                <tr>
+                    <th class="text-center">User Name</th>
+                    <th class="text-center">Last Login</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+<script src="~/assets/js/app/user/get_last_login.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")"></script>
+

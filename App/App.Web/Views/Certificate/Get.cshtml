@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Certificate";
+    ViewBag.CTitle = "List Certificate";
+}
+
+    <div class="card card-custom gutter-b">
+        <div class="card-header">
+            <div class="card-title">
+                <span class="card-icon">
+                    <i class="flaticon2-layers text-primary"></i>
+                </span>
+                <h3 class="card-label">
+                    List Certificate
+                </h3>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered" id="get_table">
+                <thead>
+                    <tr>
+                        <th class="text-center">Actions</th>
+                        <th class="text-center">User Name</th>
+                        <th class="text-center">Validity Start</th>
+                        <th class="text-center">Validity End</th>
+                        <th class="text-center">Status</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <div class="modal fade" id="modal_update_user_access" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update User Access</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i aria-hidden="true" class="ki ki-close"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <label class="col-lg-4 col-form-label">Sum User Access</label>
+                            <div class="col-lg-8">
+                                <input type="number" id="sum_access" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" id="id_user_package">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="UpdateUserAccess()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<script src="~/assets/js/app/certificate/get.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")"></script>
+

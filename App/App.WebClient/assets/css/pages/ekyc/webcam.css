@@ -1,0 +1,12 @@
+﻿#video {
+    background-color: #666;
+    width: 100%;
+    height: auto;
+    /*-moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);*/
+}
+
+#overlay, .overlay {
+    position: absolute;
+}

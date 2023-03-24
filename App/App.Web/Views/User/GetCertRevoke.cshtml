@@ -1,0 +1,158 @@
+﻿
+@{
+    ViewBag.Title = "User";
+    ViewBag.CTitle = "List Request Revoke Certificate";
+}
+
+<div class="card card-custom gutter-b">
+    <div class="card-header">
+        <div class="card-title">
+            <span class="card-icon">
+                <i class="flaticon2-layers text-primary"></i>
+            </span>
+            <h3 class="card-label">
+                List Request Revoke Certificate
+            </h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered" id="get_table">
+            <thead>
+                <tr>
+                    <th class="text-center">Actions</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Phone</th>
+                    <th class="text-center">Reason</th>
+                    <th class="text-center">Date Input</th>
+                    <th class="text-center">Date Update</th>
+                    <th class="text-center">Status</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="modal fade" id="model_preview_video" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Preview EKYC</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-lg-3">
+                            <img id="face_target" alt="image" class="rounded img-fluid" style="max-width: 100%;">
+                        </div>
+                        <div class="col-lg-4">
+                            <img id="id_card" alt="image" class="rounded img-fluid" style="max-width: 100%;">
+                        </div>
+                        <div class="col-lg-5">
+                            <table class="table" id="table_ekyc">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="id_ekyc_ra">
+                    <button type="button" class="btn btn-primary" onclick="ModalVerifManual()">Manual Verification</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="model_preview_certificate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Preview Detail</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <div class="col-lg-12">
+                            <table class="table" id="table_certificate">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal_revoke" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Revoke Certificate</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label class="col-lg-12 col-form-label">You want revoke this certificate with user name <span id="span_user_name"></span>. Please choose revocation reason</label>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-12">
+                            <select class="form-control" id="revocation_reason">
+                                <option value="PRIVILEGES_WITHDRAWN">PRIVILEGES WITHDRAWN</option>
+                                <option value="AFFILIATION_CHANGED">AFFILIATION CHANGED</option>
+                                <option value="SUPERSEDED">SUPERSEDED</option>
+                                <option value="CA_COMPROMISE">CA COMPROMISE</option>
+                                <option value="KEY_COMPROMISE">KEY COMPROMISE</option>
+                                <option value="AA_COMPROMISE">AA COMPROMISE</option>
+                                <option value="CESSATION_OF_OPERATION">CESSATION OF OPERATION</option>
+                                <option value="REMOVE_FROM_CRL">REMOVE FROM CRL</option>
+                                <option value="CERTIFICATE_HOLD">CERTIFICATE HOLD</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="user_name">
+                    <input type="hidden" id="serial_number">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="RevokeCertificate()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal_verif_manual" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Upload File Manual Verification</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--begin::Form Group-->
+                    <div class="form-group">
+                        <label class="font-size-h6 font-weight-bolder text-dark">Document <span class="form-text text-muted">Type zip</span></label>
+                        <div class="custom-file">
+                            <input type="file" class="form-control form-control-lg form-control-solid" id="file_datamanual" name="file_datamanual" onchange="ChangeLabelFileZip(this.id)">
+                            <label class="form-control form-control-lg form-control-solid custom-file-label" for="file_datamanual" id="label_file_datamanual">Choose file</label>
+                        </div>
+                    </div>
+                    <!--end::Form Group-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="VerifManual()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/assets/js/app/user/get_cert_revoke.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")"></script>
+<script src="~/assets/js/app/ekyc/verif_manual.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")"></script>
+

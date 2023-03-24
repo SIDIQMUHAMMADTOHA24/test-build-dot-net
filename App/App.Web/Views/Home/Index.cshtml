@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Home";
+    ViewBag.CTitle = "Dashboard";
+}
+
+<div class="row">
+    <div class="col-xl-3">
+        <!--begin::Stats Widget 29-->
+        <div class="card card-custom bgi-no-repeat card-stretch gutter-b"
+             style="background-position: right top; background-size: 30% auto; background-image: url(assets/media/svg/shapes/abstract-1.svg)">
+            <!--begin::Body-->
+            <div class="card-body">
+                <span class="svg-icon svg-icon-2x svg-icon-info">
+                    <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Mail-opened.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect x="0" y="0" width="24" height="24"/>
+        <path d="M3.5,21 L20.5,21 C21.3284271,21 22,20.3284271 22,19.5 L22,8.5 C22,7.67157288 21.3284271,7 20.5,7 L10,7 L7.43933983,4.43933983 C7.15803526,4.15803526 6.77650439,4 6.37867966,4 L3.5,4 C2.67157288,4 2,4.67157288 2,5.5 L2,19.5 C2,20.3284271 2.67157288,21 3.5,21 Z" fill="#000000" opacity="0.3"/>
+        <path d="M12,13 C10.8954305,13 10,12.1045695 10,11 C10,9.8954305 10.8954305,9 12,9 C13.1045695,9 14,9.8954305 14,11 C14,12.1045695 13.1045695,13 12,13 Z" fill="#000000" opacity="0.3"/>
+        <path d="M7.00036205,18.4995035 C7.21569918,15.5165724 9.36772908,14 11.9907452,14 C14.6506758,14 16.8360465,15.4332455 16.9988413,18.5 C17.0053266,18.6221713 16.9988413,19 16.5815,19 C14.5228466,19 11.463736,19 7.4041679,19 C7.26484009,19 6.98863236,18.6619875 7.00036205,18.4995035 Z" fill="#000000" opacity="0.3"/>
+    </g>
+                    </svg><!--end::Svg Icon-->
+                </span>
+                <span class="card-title font-weight-bolder text-dark-75 font-size-h2 mb-0 mt-6 d-block" id="u_total"></span>
+                <span class="font-weight-bold text-muted  font-size-sm">Total User</span>
+            </div>
+            <!--end::Body-->
+        </div>
+        <!--end::Stats Widget 29-->
+    </div>
+    <div class="col-xl-3">
+        <!--begin::Stats Widget 30-->
+        <div class="card card-custom bg-success card-stretch gutter-b">
+            <!--begin::Body-->
+            <div class="card-body">
+                <span class="svg-icon svg-icon-2x svg-icon-white">
+                    <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Group.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <polygon points="0 0 24 0 24 24 0 24" />
+                            <path d="M18,14 C16.3431458,14 15,12.6568542 15,11 C15,9.34314575 16.3431458,8 18,8 C19.6568542,8 21,9.34314575 21,11 C21,12.6568542 19.6568542,14 18,14 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                            <path d="M17.6011961,15.0006174 C21.0077043,15.0378534 23.7891749,16.7601418 23.9984937,20.4 C24.0069246,20.5466056 23.9984937,21 23.4559499,21 L19.6,21 C19.6,18.7490654 18.8562935,16.6718327 17.6011961,15.0006174 Z M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
+                        </g>
+                    </svg><!--end::Svg Icon-->
+                </span>
+                <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block" id="u_active"></span>
+                <span class="font-weight-bold text-white  font-size-sm">Active User</span>
+            </div>
+            <!--end::Body-->
+        </div>
+        <!--end::Stats Widget 30-->
+    </div>
+    <div class="col-xl-3">
+        <!--begin::Stats Widget 31-->
+        <div class="card card-custom bg-danger card-stretch gutter-b">
+            <!--begin::Body-->
+            <div class="card-body">
+                <span class="svg-icon svg-icon-2x svg-icon-white">
+                    <!--begin::Svg Icon | path:assets/media/svg/icons/Media/Equalizer.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect x="0" y="0" width="24" height="24"/>
+        <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"/>
+        <path d="M12.0355339,10.6213203 L14.863961,7.79289322 C15.2544853,7.40236893 15.8876503,7.40236893 16.2781746,7.79289322 C16.6686989,8.18341751 16.6686989,8.81658249 16.2781746,9.20710678 L13.4497475,12.0355339 L16.2781746,14.863961 C16.6686989,15.2544853 16.6686989,15.8876503 16.2781746,16.2781746 C15.8876503,16.6686989 15.2544853,16.6686989 14.863961,16.2781746 L12.0355339,13.4497475 L9.20710678,16.2781746 C8.81658249,16.6686989 8.18341751,16.6686989 7.79289322,16.2781746 C7.40236893,15.8876503 7.40236893,15.2544853 7.79289322,14.863961 L10.6213203,12.0355339 L7.79289322,9.20710678 C7.40236893,8.81658249 7.40236893,8.18341751 7.79289322,7.79289322 C8.18341751,7.40236893 8.81658249,7.40236893 9.20710678,7.79289322 L12.0355339,10.6213203 Z" fill="#000000"/>
+    </g>
+                    </svg><!--end::Svg Icon-->
+                </span>
+                <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 d-block" id="u_notactive"></span>
+                <span class="font-weight-bold text-white  font-size-sm">Not Active User</span>
+            </div>
+            <!--end::Body-->
+        </div>
+        <!--end::Stats Widget 31-->
+    </div>
+    <div class="col-xl-3">
+        <!--begin::Stats Widget 32-->
+        <div class="card card-custom bg-warning card-stretch gutter-b">
+            <!--begin::Body-->
+            <div class="card-body">
+                <span class="svg-icon svg-icon-2x svg-icon-white">
+                    <!--begin::Svg Icon | path:assets/media/svg/icons/Communication/Group-chat.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect x="0" y="0" width="24" height="24"/>
+        <circle fill="#000000" opacity="0.3" cx="12" cy="12" r="10"/>
+        <path d="M12,16 C12.5522847,16 13,16.4477153 13,17 C13,17.5522847 12.5522847,18 12,18 C11.4477153,18 11,17.5522847 11,17 C11,16.4477153 11.4477153,16 12,16 Z M10.591,14.868 L10.591,13.209 L11.851,13.209 C13.447,13.209 14.602,11.991 14.602,10.395 C14.602,8.799 13.447,7.581 11.851,7.581 C10.234,7.581 9.121,8.799 9.121,10.395 L7.336,10.395 C7.336,7.875 9.31,5.922 11.851,5.922 C14.392,5.922 16.387,7.875 16.387,10.395 C16.387,12.915 14.392,14.868 11.851,14.868 L10.591,14.868 Z" fill="#000000"/>
+    </g>
+                    </svg><!--end::Svg Icon-->
+                </span>
+                <span class="card-title font-weight-bolder text-white font-size-h2 mb-0 mt-6 text-hover-primary d-block" id="u_pending"></span>
+                <span class="font-weight-bold text-white  font-size-sm">Pending User</span>
+            </div>
+            <!--end::Body-->
+        </div>
+        <!--end::Stats Widget 32-->
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card card-custom gutter-b">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3 class="card-label">
+                        Number of User Accesses per Day
+                    </h3>
+                </div>
+            </div>
+            <div class="card-body">
+                <!--begin::Chart-->
+                <div id="chart_3" class="d-flex justify-content-center"></div>
+                <!--end::Chart-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/assets/js/app/home/dashboard.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")"></script>

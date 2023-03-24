@@ -1,0 +1,726 @@
+﻿
+@{
+    ViewBag.Title = "Sign Up";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<!--begin::Head-->
+<head>
+    <meta charset="utf-8" />
+    <title>Sign Up | Enkripa User</title>
+    <meta name="description" content="Enkripa Sign Up Badan Usaha" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="anti_forgery_token" content="@TokenHeaderValue()" />
+
+    <!--begin::Fonts-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />        <!--end::Fonts-->
+    <!--begin::Page Custom Styles(used by this page)-->
+    <link href="~/assets/css/pages/login/login-4.css?v=7.0.6" rel="stylesheet" type="text/css" />
+    <!--end::Page Custom Styles-->
+    <!--begin::Global Theme Styles(used by all pages)-->
+    <link href="~/assets/plugins/global/plugins.bundle.css?v=7.0.6" rel="stylesheet" type="text/css" />
+    <link href="~/assets/plugins/custom/prismjs/prismjs.bundle.css?v=7.0.6" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/style.bundle.css?v=7.0.6" rel="stylesheet" type="text/css" />
+    <!--end::Global Theme Styles-->
+    <!--begin::Layout Themes(used by all pages)-->
+
+    <link href="~/assets/css/pages/ekyc/webcam.css?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/loading.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+
+    <link rel="shortcut icon" href="~/assets/media/logos/enkripa.ico" />
+
+    <script src="~/assets/js/app/ekyc/face-api.min.js" type="text/javascript"></script>
+    <script src="~/assets/js/app/ekyc/webcampr.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")" type="text/javascript"></script>
+    <style type="text/css">
+        .login.login-4 .login-aside {
+            width: 400px !important
+        }
+    </style>
+</head>
+<!--end::Head-->
+<!--begin::Body-->
+<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+
+    <!--begin::Main-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Login-->
+        <div class="login login-4 wizard d-flex flex-column flex-lg-row flex-column-fluid wizard" id="kt_login">
+            <!--begin::Content-->
+            <div class="login-container d-flex flex-center flex-row flex-row-fluid order-2 order-lg-1 flex-row-fluid bg-white py-lg-0 pb-lg-0 pt-15 pb-12">
+                <!--begin::Container-->
+                <div class="login-content login-content-signup d-flex flex-column">
+                    <!--begin::Aside Top-->
+                    <div class="d-flex flex-center flex-column-auto flex-column px-10">
+                        <!--begin::Aside header-->
+                        <a href="#" class="login-logo pb-lg-4 pb-10">
+                            <img src="~/assets/media/logos/enkripa.png" class="max-h-70px" alt="" />
+                        </a>
+                        <!--end::Aside header-->
+                        <!--begin: Wizard Nav-->
+                        <div class="wizard-nav pt-5 pt-lg-15 pb-10">
+                            <!--begin::Wizard Steps-->
+                            <div class="wizard-steps d-flex flex-column flex-sm-row">
+                                <!--begin::Wizard Step 1 Nav-->
+                                <div class="wizard-step flex-grow-1 flex-basis-0" data-wizard-type="step" data-wizard-state="current">
+                                    <div class="wizard-wrapper pr-7">
+                                        <div class="wizard-icon">
+                                            <i class="wizard-check ki ki-check"></i>
+                                            <span class="wizard-number">1</span>
+                                        </div>
+                                        <div class="wizard-label">
+                                            <h3 class="wizard-title">
+                                                Personal
+                                            </h3>
+                                            <div class="wizard-desc">
+
+                                            </div>
+                                        </div>
+                                        <span class="svg-icon pl-6">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000) " x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) " />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--end::Wizard Step 1 Nav-->
+                                <!--begin::Wizard Step 1-1 Nav-->
+                                <div class="wizard-step flex-grow-1 flex-basis-0" data-wizard-type="step">
+                                    <div class="wizard-wrapper pr-7">
+                                        <div class="wizard-icon">
+                                            <i class="wizard-check ki ki-check"></i>
+                                            <span class="wizard-number">2</span>
+                                        </div>
+                                        <div class="wizard-label">
+                                            <h3 class="wizard-title">
+                                                Company
+                                            </h3>
+                                            <div class="wizard-desc">
+
+                                            </div>
+                                        </div>
+                                        <span class="svg-icon pl-6">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000) " x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) " />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--end::Wizard Step 1-1 Nav-->
+                                <!--begin::Wizard Step 1-2 Nav-->
+                                <div class="wizard-step flex-grow-1 flex-basis-0" data-wizard-type="step">
+                                    <div class="wizard-wrapper pr-7">
+                                        <div class="wizard-icon">
+                                            <i class="wizard-check ki ki-check"></i>
+                                            <span class="wizard-number">3</span>
+                                        </div>
+                                        <div class="wizard-label">
+                                            <h3 class="wizard-title">
+                                                Account
+                                            </h3>
+                                            <div class="wizard-desc">
+
+                                            </div>
+                                        </div>
+                                        <span class="svg-icon pl-6">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000) " x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) " />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--end::Wizard Step 1-2 Nav-->
+                                <!--begin::Wizard Step 2 Nav-->
+                                <div class="wizard-step flex-grow-1 flex-basis-0" data-wizard-type="step">
+                                    <div class="wizard-wrapper pr-7">
+                                        <div class="wizard-icon">
+                                            <i class="wizard-check ki ki-check"></i>
+                                            <span class="wizard-number">4</span>
+                                        </div>
+                                        <div class="wizard-label">
+                                            <h3 class="wizard-title">
+                                                EKYC
+                                            </h3>
+                                            <div class="wizard-desc">
+
+                                            </div>
+                                        </div>
+                                        <span class="svg-icon pl-6">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000) " x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) " />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--end::Wizard Step 2 Nav-->
+                                <!--begin::Wizard Step 2 Nav-->
+                                <div class="wizard-step flex-grow-1 flex-basis-0" data-wizard-type="step">
+                                    <div class="wizard-wrapper pr-7">
+                                        <div class="wizard-icon">
+                                            <i class="wizard-check ki ki-check"></i>
+                                            <span class="wizard-number">5</span>
+                                        </div>
+                                        <div class="wizard-label">
+                                            <h3 class="wizard-title">
+                                                Product
+                                            </h3>
+                                            <div class="wizard-desc">
+
+                                            </div>
+                                        </div>
+                                        <span class="svg-icon pl-6">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000) " x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) " />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--end::Wizard Step 2 Nav-->
+                                <!--begin::Wizard Step 3 Nav-->
+                                <div class="wizard-step flex-grow-1 flex-basis-0" data-wizard-type="step">
+                                    <div class="wizard-wrapper">
+                                        <div class="wizard-icon">
+                                            <i class="wizard-check ki ki-check"></i>
+                                            <span class="wizard-number">6</span>
+                                        </div>
+                                        <div class="wizard-label">
+                                            <h3 class="wizard-title">
+                                                Complete
+                                            </h3>
+                                            <div class="wizard-desc">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Wizard Step 3 Nav-->
+                            </div>
+                            <!--end::Wizard Steps-->
+                        </div>
+                        <!--end: Wizard Nav-->
+                    </div>
+                    <!--end::Aside Top-->
+                    <!--begin::Signin-->
+                    <div class="login-form">
+                        <!--begin::Form-->
+                        <div class="form px-10" novalidate="novalidate" id="kt_login_signup_form">
+                            <!--begin: Wizard Step 1-->
+                            <div class="row" data-wizard-type="step-content" data-wizard-state="current">
+                                <!--begin::Title-->
+                                <div class="pb-10 pb-lg-12">
+                                    <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Personal Data</h3>
+                                    @*<div class="text-muted font-weight-bold font-size-h4">
+                                            Already have an Account ?
+                                            <a href="~/" class="text-primary font-weight-bolder">Sign In</a>
+                                        </div>*@
+                                </div>
+                                <!--begin::Title-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">NIK <span class="form-text text-muted">Please input number of identity card</span></label>
+                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="nik" id="nik" placeholder="NIK" value="" />
+                                </div>
+                                <!--end::Form Group-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Full Name</label>
+                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="fname" id="full_name" placeholder="Full Name" value="" />
+                                </div>
+                                <!--end::Form Group-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Birth Place</label>
+                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="birthplace" id="birthplace" placeholder="Birth Place" value="" />
+                                </div>
+                                <!--end::Form Group-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Birth Date</label>
+                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="birthdate" id="birthdate" placeholder="dd-mm-yyyy" value="" />
+                                </div>
+                                <!--end::Form Group-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">ID Card <span class="form-text text-muted">Type image with max size 5 Mb</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" id="file_data" name="fdata" onchange="ChangeLabelFile(this.id, 0)">
+                                        <label class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 custom-file-label" for="file_data" id="label_file_data">Choose file</label>
+                                    </div>
+                                </div>
+                                <!--end::Form Group-->
+                            </div>
+                            <!--end: Wizard Step 1-->
+                            <!--begin: Wizard Step 1-1-->
+                            <div class="pb-5" data-wizard-type="step-content">
+                                <!--begin::Title-->
+                                <div class="pb-10 pb-lg-12">
+                                    <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Company</h3>
+                                </div>
+                                <!--begin::Title-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Company Name</label>
+                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="nama_perusahaan" id="nama_perusahaan" placeholder="Company Name" value="" />
+                                </div>
+                                <!--end::Form Group-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Surat Permohonan<span class="form-text text-muted">Type PDF with max size 5 Mb</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" id="surat_permohonan" name="surat_permohonan" onchange="ChangeLabelFile(this.id, 1)">
+                                        <label class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 custom-file-label" for="surat_permohonan" id="label_surat_permohonan">Choose file</label>
+                                    </div>
+                                </div>
+                                <!--end::Form Group-->
+                                <br>
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Akta Pendirian <span class="form-text text-muted">Type PDF with max size 5 Mb</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" id="akta_pendirian" name="akta_pendirian" onchange="ChangeLabelFile(this.id, 1)">
+                                        <label class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 custom-file-label" for="akta_pendirian" id="label_akta_pendirian">Choose file</label>
+                                    </div>
+                                </div>
+                                <!--end::Form Group-->
+                                <br>
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Surat Pengesahan<span class="form-text text-muted">Type PDF with max size 5 Mb</span></label>
+                                    <div class="custom-file">
+                                        <input type="file" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" id="surat_pengesahan" name="surat_pengesahan" onchange="ChangeLabelFile(this.id, 1)">
+                                        <label class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6 custom-file-label" for="surat_pengesahan" id="label_surat_pengesahan">Choose file</label>
+                                    </div>
+                                </div>
+                                <!--end::Form Group-->
+                            </div>
+                            <!--end: Wizard Step 1-1-->
+                            <!--begin: Wizard Step 1-2-->
+                            <div class="pb-5" data-wizard-type="step-content">
+                                <!--begin::Title-->
+                                <div class="pb-10 pb-lg-12">
+                                    <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Account</h3>
+                                </div>
+                                <!--begin::Title-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Company Email</label>
+                                    <input type="email" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="email" id="email" placeholder="Company Email" value="" />
+                                </div>
+                                <!--end::Form Group-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Mobile Number</label>
+                                    <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="phone" id="phone" placeholder="Mobile Number" value="" />
+                                </div>
+                                <!--end::Form Group-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Password</label>
+                                    <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="password" id="password" placeholder="Password" value="" />
+                                </div>
+                                <!--end::Form Group-->
+                                <!--begin::Form Group-->
+                                <div class="form-group">
+                                    <label class="font-size-h6 font-weight-bolder text-dark">Confirm Password</label>
+                                    <input type="password" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="confirm_password" id="confirm_password" placeholder="Confirm Password" value="" />
+                                </div>
+                                <!--end::Form Group-->
+                            </div>
+                            <!--end: Wizard Step 1-2-->
+                            <!--begin: Wizard Step 2-->
+                            <div class="pb-5" data-wizard-type="step-content">
+                                <!--begin::Title-->
+                                <div class="pt-lg-0 pt-5 pb-15">
+                                    <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">E-KYC Process</h3>
+                                    <div class="text-muted font-weight-bold font-size-h4">
+                                        Please, run the command :
+                                        <span class="text-primary font-weight-bolder" id="question"></span>
+                                    </div>
+                                </div>
+                                <!--begin::Title-->
+                                <!--begin::Row-->
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <!--begin::Input-->
+                                        <canvas id="canvas" class="overlay"></canvas>
+                                        <video id="video" width="600" height="350" autoplay muted></video>
+                                        <!--end::Input-->
+                                    </div>
+                                </div>
+                                <!--end::Row-->
+                            </div>
+                            <!--end: Wizard Step 2-->
+                            <div class="pb-5" data-wizard-type="step-content">
+                                <!--begin::Title-->
+                                <div class="pt-lg-0 pt-5 pb-15">
+                                    <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Choose Product</h3>
+                                    @*<div class="text-muted font-weight-bold font-size-h4">
+                                            Please click submit to finish Sign Up and E-KYC process
+                                        </div>*@
+                                </div>
+                                <!--end::Title-->
+                                <div class="form-group m-0">
+                                    @*<label class="font-size-h6 font-weight-bolder text-dark">Choose Product</label>*@
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="option">
+                                                <span class="option-control">
+                                                    <span class="checkbox checkbox-lg">
+                                                        <input type="checkbox" id="package" name="m_option_1" value="1" checked="checked" />
+                                                        <span></span>
+                                                    </span>
+                                                </span>
+                                                <span class="option-label">
+                                                    <span class="option-head">
+                                                        <span class="option-title">
+                                                            Enkripa Sign
+                                                        </span>
+                                                        <span class="option-focus">
+
+                                                        </span>
+                                                    </span>
+                                                    <span class="option-body">
+                                                        <a href="https://enkripa.id/" target="_blank" class="text-primary">Read more</a>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        @*<div class="col-lg-6">
+                                            <label class="option">
+                                                <span class="option-control">
+                                                    <span class="checkbox checkbox-lg">
+                                                        <input type="checkbox" id="package" name="m_option_1" value="2" />
+                                                        <span></span>
+                                                    </span>
+                                                </span>
+                                                <span class="option-label">
+                                                    <span class="option-head">
+                                                        <span class="option-title">
+                                                            Enkripa E-KYC
+                                                        </span>
+                                                        <span class="option-focus">
+
+                                                        </span>
+                                                    </span>
+                                                    <span class="option-body">
+                                                        <a href="https://enkripa.id/" target="_blank" class="text-primary">Read more</a>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </div>*@
+                                        @*<div class="col-lg-4">
+                                                <label class="option">
+                                                    <span class="option-control">
+                                                        <span class="checkbox checkbox-lg">
+                                                            <input type="checkbox" id="package" name="m_option_1" value="3" />
+                                                            <span></span>
+                                                        </span>
+                                                    </span>
+                                                    <span class="option-label">
+                                                        <span class="option-head">
+                                                            <span class="option-title">
+                                                                Enkripa OCR
+                                                            </span>
+                                                            <span class="option-focus">
+
+                                                            </span>
+                                                        </span>
+                                                        <span class="option-body">
+                                                            <a href="https://enkripa.id/solusi-ocr/" target="_blank" class="text-primary">Read more</a>
+                                                        </span>
+                                                    </span>
+                                                </label>
+                                            </div>*@
+                                    </div>
+                                </div>
+                            </div>
+                            <!--begin: Wizard Step 3-->
+                            <div class="pb-5" data-wizard-type="step-content">
+                                <!--begin::Title-->
+                                <div class="pt-lg-0 pt-5 pb-15">
+                                    <h3 class="font-weight-bolder text-dark font-size-h2 font-size-h1-lg">Complete</h3>
+                                    <div class="text-muted font-weight-bold font-size-h4" id="message_submit">
+                                        Please click submit to finish Sign Up and E-KYC process
+                                    </div>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Section-->
+                                <h4 class="font-weight-bolder mb-3">
+                                    Account:
+                                </h4>
+                                <div class="text-dark-50 font-weight-bold line-height-lg mb-8">
+                                    <div id="label_full_name"></div>
+                                    <div id="label_email"></div>
+                                    <div id="label_phone"></div>
+                                    <input type="hidden" id="token_data" value="@ViewBag.token_data">
+                                </div>
+                                <!--end::Section-->
+
+                                <div class="form-group m-0">
+                                    @*<label class="font-size-h6 font-weight-bolder text-dark">Choose Product</label>*@
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label class="option">
+                                                <span class="option-control">
+                                                    <span class="checkbox checkbox-lg">
+                                                        <input type="checkbox" id="confirm_submit" name="confirm_submit" value="1" />
+                                                        <span></span>
+                                                    </span>
+                                                </span>
+                                                <span class="option-label">
+                                                    <span class="option-head">
+                                                        <span class="option-title">
+                                                            I agree to all applicable terms, conditions, and privacy policy
+                                                        </span>
+                                                        <span class="option-focus">
+
+                                                        </span>
+                                                    </span>
+                                                    <span class="option-body">
+                                                        <a href="https://repository.enkripa.id/" target="_blank" class="text-primary">Read more here</a>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="font-size-h6 font-weight-bolder text-dark">Input Captcha</label>
+                                                <img class="img-fluid rounded mx-auto d-block" id="img_captcha" alt="Captcha"><br>
+                                                <a href="javascript:;" onclick="GenerateCaptcha()" class="text-primary">Reload Captcha</a>
+                                                <input type="text" class="form-control form-control-solid h-auto py-7 px-6 border-0 rounded-lg font-size-h6" name="captcha" id="captcha" placeholder="Captcha" value="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Wizard Step 5-->
+                            <!--begin: Wizard Actions-->
+                            <div class="d-flex justify-content-between pt-7">
+                                <div class="mr-2">
+                                    <button type="button" class="btn btn-light-primary font-weight-bolder font-size-h6 pr-8 pl-6 py-4 my-3 mr-3" data-wizard-type="action-prev" id="button_prev">
+                                        <span class="svg-icon svg-icon-md mr-2">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Left-2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) " x="14" y="7" width="2" height="10" rx="1" />
+                                                    <path d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) " />
+                                                </g>
+                                            </svg><!--end::Svg Icon-->
+                                        </span>                                Previous
+                                    </button>
+                                </div>
+                                <div class="mr-2">
+                                    <a href="https://sign.enkripa.id" class="btn btn-light-primary font-weight-bolder font-size-h6 pr-8 pl-6 py-4 my-3 mr-3" data-wizard-type="action-prev" id="back_to_login" style="display:none">
+                                        <span class="svg-icon svg-icon-md mr-2">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Left-2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(15.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-15.000000, -12.000000) " x="14" y="7" width="2" height="10" rx="1" />
+                                                    <path d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997) " />
+                                                </g>
+                                            </svg><!--end::Svg Icon-->
+                                        </span>                                Back to login
+                                    </a>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-primary font-weight-bolder font-size-h6 pl-8 pr-4 py-4 my-3" data-wizard-type="action-submit" onclick="ModalPostVerification()" id="kt_login_signup_form_submit_button">
+                                        Submit
+                                        <span class="svg-icon svg-icon-md ml-2">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Right-2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000) " x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) " />
+                                                </g>
+                                            </svg><!--end::Svg Icon-->
+                                        </span>
+                                    </button>
+
+                                    <button type="button" class="btn btn-primary font-weight-bolder font-size-h6 pl-8 pr-4 py-4 my-3" data-wizard-type="action-next" id="button_next">
+                                        Next
+                                        <span class="svg-icon svg-icon-md ml-2">
+                                            <!--begin::Svg Icon | path:assets/media/svg/icons/Navigation/Right-2.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(8.500000, 12.000000) rotate(-90.000000) translate(-8.500000, -12.000000) " x="7.5" y="7.5" width="2" height="9" rx="1" />
+                                                    <path d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z" fill="#000000" fill-rule="nonzero" transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997) " />
+                                                </g>
+                                            </svg><!--end::Svg Icon-->
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!--end: Wizard Actions-->
+                        </div>
+                        <!--end::Form-->
+                        <div class="d-flex flex-center flex-column-auto d-lg-flex mt-10">
+                            <a href="https://enkripa.id" target="_blank" class="text-muted font-weight-bold mr-2 justify-content-center">2021&copy; PT Enkripa Teknologi Indonesia</a>
+                        </div>
+                    </div>
+                    <!--end::Signin-->
+                </div>
+
+                <div class="modal fade" id="modal_verification" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Input Token</h5>
+                            </div>
+                            <div class="modal-body">
+                                <label class="modal-body">Get token from sms on your number</label>
+                                <div class="form">
+
+                                    <div class="form-group form-group-last row">
+                                        <label class="col-lg-3 col-form-label text-lg-right">Token:</label>
+                                        <div class="col-lg-7">
+                                            <input type="text" class="form-control form-control-lg form-control-solid" id="token_otp" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-between">
+                                <div class="mr-2">
+                                    @*<button type="button" class="btn btn-success font-weight-bold" onclick="ModalPostVerification()">Resend Token</button>*@
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-primary font-weight-bold" onclick="PostVerification()">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end::Container-->
+            </div>
+            <!--begin::Content-->
+            <!--begin::Aside-->
+            @*<div class="login-aside order-1 order-lg-4 bgi-no-repeat bgi-position-x-right">
+                    <div class="login-conteiner bgi-no-repeat login-aside d-flex flex-row-auto bgi-size-cover bgi-position-x-center bgi-position-y-top p-10 p-lg-10" style="background-image: url('/assets/media/svg/illustrations/Dashboard OCR.svg');">
+                        <h5 class="pt-lg-30 pl-lg-10 pb-lg-0 pl-10 py-10 m-0 d-flex justify-content-md-start font-weight display5 display1-lg text-white">
+                            Enkripa SigUp<br />
+                        </h5>
+                    </div>
+                </div>*@
+            <!--end::Aside-->
+        </div>
+        <!--end::Login-->
+        <div id="fade_loading" style="display:none"></div>
+        <div id="modal_loading" style="display:none">
+            <div class="spinner spinner-danger spinner-lg mr-30"></div>
+        </div>
+    </div>
+    <!--end::Main-->
+    <!--begin::Global Config(global config for global JS scripts)-->
+    <script>
+        var KTAppSettings = {
+            "breakpoints": {
+                "sm": 576,
+                "md": 768,
+                "lg": 992,
+                "xl": 1200,
+                "xxl": 1400
+            },
+            "colors": {
+                "theme": {
+                    "base": {
+                        "white": "#ffffff",
+                        "primary": "#3699FF",
+                        "secondary": "#E5EAEE",
+                        "success": "#1BC5BD",
+                        "info": "#8950FC",
+                        "warning": "#FFA800",
+                        "danger": "#F64E60",
+                        "light": "#E4E6EF",
+                        "dark": "#181C32"
+                    },
+                    "light": {
+                        "white": "#ffffff",
+                        "primary": "#E1F0FF",
+                        "secondary": "#EBEDF3",
+                        "success": "#C9F7F5",
+                        "info": "#EEE5FF",
+                        "warning": "#FFF4DE",
+                        "danger": "#FFE2E5",
+                        "light": "#F3F6F9",
+                        "dark": "#D6D6E0"
+                    },
+                    "inverse": {
+                        "white": "#ffffff",
+                        "primary": "#ffffff",
+                        "secondary": "#3F4254",
+                        "success": "#ffffff",
+                        "info": "#ffffff",
+                        "warning": "#ffffff",
+                        "danger": "#ffffff",
+                        "light": "#464E5F",
+                        "dark": "#ffffff"
+                    }
+                },
+                "gray": {
+                    "gray-100": "#F3F6F9",
+                    "gray-200": "#EBEDF3",
+                    "gray-300": "#E4E6EF",
+                    "gray-400": "#D1D3E0",
+                    "gray-500": "#B5B5C3",
+                    "gray-600": "#7E8299",
+                    "gray-700": "#5E6278",
+                    "gray-800": "#3F4254",
+                    "gray-900": "#181C32"
+                }
+            },
+            "font-family": "Poppins"
+        };
+    </script>
+
+    <script>
+    @functions{
+        public string TokenHeaderValue()
+        {
+            string cookieToken, formToken;
+            AntiForgery.GetTokens(null, out cookieToken, out formToken);
+            return cookieToken + ":" + formToken;
+        }
+    }
+    </script>
+
+    <!--end::Global Config-->
+    <!--begin::Global Theme Bundle(used by all pages)-->
+    <script src="~/assets/plugins/global/plugins.bundle.js?v=7.0.6"></script>
+    <script src="~/assets/plugins/custom/prismjs/prismjs.bundle.js?v=7.0.6"></script>
+    <script src="~/assets/js/scripts.bundle.js?v=7.0.6"></script>
+    <!--end::Global Theme Bundle-->
+    <!--begin::Page Scripts(used by this page)-->
+    <script src="~/assets/js/pages/custom/login/login-4-pr.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")"></script>
+    <!--end::Page Scripts-->
+    <script src="~/assets/js/tools/toastr_option_signup.js" type="text/javascript"></script>
+    <script src="~/assets/js/tools/loading.js" type="text/javascript"></script>
+    <script src="~/assets/libsodium.js/dist/browsers/combined/sodium.js" type="text/javascript"></script>
+    <script src="~/assets/js/tools/date_picke_sign_up.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")"></script>
+    <script src="~/assets/js/tools/change_label_file.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")" type="text/javascript"></script>
+    <script src="~/assets/js/tools/encode_jax.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")" type="text/javascript"></script>
+</body>
+<!--end::Body-->
+</html>
+
+

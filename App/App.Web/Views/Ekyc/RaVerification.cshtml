@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "EKYC";
+    ViewBag.CTitle = "Ra Verification";
+}
+
+<div class="card card-custom gutter-b">
+    <div class="card-header">
+        <div class="card-title">
+            <span class="card-icon">
+                <i class="flaticon2-layers text-primary"></i>
+            </span>
+            <h3 class="card-label">
+                Ra Verification
+            </h3>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="form-group row">
+            <label class="col-xl-3 col-lg-3 col-form-label text-alert">NIK</label>
+            <div class="col-lg-9 col-xl-6">
+                <input type="text" class="form-control form-control-lg form-control-solid mb-2" id="nik" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xl-3 col-lg-3 col-form-label text-alert">Name</label>
+            <div class="col-lg-9 col-xl-6">
+                <input type="text" class="form-control form-control-lg form-control-solid" id="name" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xl-3 col-lg-3 col-form-label text-alert">Birth Place</label>
+            <div class="col-lg-9 col-xl-6">
+                <input type="text" class="form-control form-control-lg form-control-solid" id="birthplace" />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-xl-3 col-lg-3 col-form-label text-alert">Birth Date</label>
+            <div class="col-lg-9 col-xl-6">
+                <input type="text" class="form-control form-control-lg form-control-solid" id="birthdate" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-xl-3 col-lg-3 col-form-label text-alert">Result</label>
+            <div class="col-lg-9 col-xl-6">
+                <table class="table" id="table_ra">
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <input type="hidden" value="@ViewBag.id_ekyc" id="id_ekyc">
+                <button type="reset" class="btn btn-secondary">Cancel</button>
+                <button type="button" class="btn btn-success mr-2" onclick="RaVerification()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/assets/js/app/ekyc/ra_verification.js?v=@System.Configuration.ConfigurationManager.AppSettings.Get("vesion_js")"></script>
+
