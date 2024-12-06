@@ -1,0 +1,25 @@
+name: .NET Framework Vulnerability Check
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Checkout the repository
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    # 2. Install Trivy
+    - name: Install Trivy
+      run: |
+        curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
+        trivy --version
+
+    # 3. Run Trivy to Check Vulnerabilities in Dependencies
+    - name: Run Trivy Dependency Scan
+      run: |
+        trivy fs --scanners vuln,secret,misconfig ./
