@@ -4,21 +4,26 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
-    runs-on: windows-latest  # Harus Windows untuk .NET Framework
+    runs-on: windows-latest
 
     steps:
-      # 1. Checkout kode dari repositori
+      # 1. Checkout kode
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Setup MSBuild
+      # 2. Setup MSBuild dari Visual Studio 2022
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
+        with:
+          vs-version: '17.0'  # Visual Studio 2022
 
-      # 3. Setup NuGet (untuk restore dependencies)
+      # 3. Setup NuGet
       - name: Setup NuGet
         uses: nuget/setup-nuget@v2
 
@@ -26,6 +31,6 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore enkripauser.sln
 
-      # 5. Build solusi dengan MSBuild
+      # 5. Build solusi
       - name: Build solution
         run: msbuild enkripauser.sln /p:Configuration=Release /p:Platform="Any CPU"
