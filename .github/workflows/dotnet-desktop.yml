@@ -1,25 +1,31 @@
-name: .NET Framework Vulnerability Check
+name: .NET Framework Build
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
-  security-check:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: windows-latest  # Harus Windows untuk .NET Framework
 
     steps:
-    # 1. Checkout the repository
-    - name: Checkout Code
-      uses: actions/checkout@v3
+      # 1. Checkout kode dari repositori
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    # 2. Install Trivy
-    - name: Install Trivy
-      run: |
-        curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin
-        trivy --version
+      # 2. Setup MSBuild
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
 
-    # 3. Run Trivy to Check Vulnerabilities in Dependencies
-    - name: Run Trivy Dependency Scan
-      run: |
-        trivy fs --scanners vuln,secret,misconfig ./
+      # 3. Setup NuGet (untuk restore dependencies)
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v2
+
+      # 4. Restore dependencies
+      - name: Restore NuGet packages
+        run: nuget restore enkripauser.sln
+
+      # 5. Build solusi dengan MSBuild
+      - name: Build solution
+        run: msbuild enkripauser.sln /p:Configuration=Release /p:Platform="Any CPU"
